@@ -1,27 +1,35 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getQuote } from '../actions/index';
+import styled from 'styled-components';
 
-const Quote = ({ getQuote, quote, isFetching, error }) => {
-    if (error !== "")
+const StyledQuote = styled.p `
+  font-size: 2em;
+  font-family: 'Judson', serif;
+  font-style: italic;
+
+`
+
+const StyledButton = styled.button `
+  border: 3px solid white;
+  width: 200px;
+  height: 75px;
+  border-radius: 15px;
+  background: none;
+  color: white;
+  font-size: 1em;
+
+
+`
+
+const Quote = ({ quote, getQuote }) => {
+
       return (
         <div>
-          <h2>{error}</h2>
-          <button onClick={getQuote}>Generate</button>
+          <StyledQuote>"{quote}"</StyledQuote>
+          <StyledButton onClick={getQuote}>Generate</StyledButton>
         </div>
       );
-  
-    if (isFetching) {
-      return <h2>Fetching a quote now :)</h2>;
-    } else {
-      return (
-        <div>
-          <h2>{quote} -Ron Swanson</h2>
-          <button onClick={getQuote}>Generate</button>
-        </div>
-      );
-    }
-    
 };
 
 const mapStateToProps = state => {
@@ -34,5 +42,5 @@ const mapStateToProps = state => {
   
   export default connect(
     mapStateToProps,
-    { getQuote }
+    { getQuote : getQuote }
   )(Quote);

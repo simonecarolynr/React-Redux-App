@@ -12,7 +12,7 @@ export const getQuote = () => dispatch => {
     .get('http://ron-swanson-quotes.herokuapp.com/v2/quotes')
     .then(res => {  
         console.log(res.data)
-        let randomQuote = res.data;
+        let randomQuote = res.data[0];
 
         dispatch({ type: FETCHING_QUOTE_SUCCESS, payload: randomQuote});
     })
