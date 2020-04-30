@@ -5,8 +5,7 @@ import styled from 'styled-components';
 
 const StyledQuote = styled.p `
   font-size: 2em;
-  font-family: 'Judson', serif;
-  font-style: italic;
+  text-align: center;
 
 `
 
@@ -18,18 +17,38 @@ const StyledButton = styled.button `
   background: none;
   color: white;
   font-size: 1em;
+  justify-content: center;
+  display: flex;
+  margin: 0 auto;
 
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:hover {
+    border: none;
+  }
 
 `
 
-const Quote = ({ quote, getQuote }) => {
+const Quote = ({ error, quote, getQuote }) => {
 
-      return (
-        <div>
-          <StyledQuote>"{quote}"</StyledQuote>
-          <StyledButton onClick={getQuote}>Generate</StyledButton>
-        </div>
-      );
+
+
+  if (error) {
+    return (
+      <alert>{error}</alert>
+    )
+  } else {
+    return (
+      <div>
+        <StyledQuote>"{quote}"</StyledQuote>
+        <StyledButton onClick={getQuote}>Generate</StyledButton>
+      </div>
+    );
+  }
+
 };
 
 const mapStateToProps = state => {

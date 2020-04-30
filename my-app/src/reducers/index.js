@@ -7,11 +7,13 @@ const initialState = {
 };
 
 export const reducer = (state = initialState, action) => {
+
+    
     switch(action.type) {
         case FETCHING_QUOTE_START:
             return {
                 ...state,
-                isLoading: true
+                isLoading: true,
             };
         case FETCHING_QUOTE_SUCCESS:
             return {

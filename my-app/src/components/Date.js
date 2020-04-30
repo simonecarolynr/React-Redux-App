@@ -1,12 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
+import { format } from 'date-fns';
 
 const TodaysDate = () => {
 
-    let today = new Date();
-    let date = today.toString();
+    const StyledDate = styled.p `
+        padding: 15px;
+        margin: 0px;
+    `
+
+    let today = format(new Date(), "'Today is a' iiii" );
 
     return (
-    <h3>{date}</h3>
+    <StyledDate>{today}</StyledDate>
     )
 };
 

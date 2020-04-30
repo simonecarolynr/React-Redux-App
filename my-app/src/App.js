@@ -7,8 +7,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      <TodaysDate />
       <header className="App-header">
-        <TodaysDate />
         <Picture />
         <Quote />
       </header>
