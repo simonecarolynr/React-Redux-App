@@ -1,7 +1,7 @@
 import { FETCHING_QUOTE_START, FETCHING_QUOTE_SUCCESS, FETCHING_QUOTE_FAILURE } from '../actions/index';
 
 const initialState = {
-    quote: null,
+    quote: `Dear frozen yogurt, you are the celery of desserts. Be ice cream, or be nothing.`,
     isLoading: false,
     error: ''
 };

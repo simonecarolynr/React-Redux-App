@@ -12,7 +12,7 @@ const StyledQuote = styled.p `
 const StyledButton = styled.button `
   border: 3px solid white;
   width: 200px;
-  height: 75px;
+  height: auto;
   border-radius: 15px;
   background: none;
   color: white;
@@ -27,7 +27,7 @@ const StyledButton = styled.button `
   }
 
   &:hover {
-    border: none;
+    
   }
 
 `
