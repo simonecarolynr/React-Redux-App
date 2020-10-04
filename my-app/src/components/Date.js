@@ -9,7 +9,7 @@ const TodaysDate = () => {
         margin: 0px;
     `
 
-    let today = format(new Date(), "'Today is a' iiii" );
+    let today = format(new Date(), "'Today is ' iiii" );
 
     return (
     <StyledDate>{today}</StyledDate>
